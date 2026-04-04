@@ -1,0 +1,12 @@
+{
+  "title": "Modern Podcast",
+  "description": "A sleek and modern podcast featuring industry insights and expert discussions.",
+  "logo": "/logo.png",
+  "favicon": "/favicon.ico",
+  "socialLinks": {
+    "twitter": "https://twitter.com",
+    "spotify": "https://spotify.com",
+    "apple": "https://podcasts.apple.com"
+  },
+  "copyright": "© 2024 Modern Podcast. All rights reserved."
+}

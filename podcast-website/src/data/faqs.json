@@ -1,0 +1,30 @@
+[
+  {
+    "id": "faq-001",
+    "question": "How often do you release new episodes?",
+    "answer": "We release new episodes every week on Mondays.",
+    "category": "General",
+    "order": 1
+  },
+  {
+    "id": "faq-002",
+    "question": "Where can I listen to the podcast?",
+    "answer": "You can listen directly on our website, or subscribe on major podcast platforms like Spotify, Apple Podcasts, and Google Podcasts.",
+    "category": "Listening",
+    "order": 2
+  },
+  {
+    "id": "faq-003",
+    "question": "Can I submit topic suggestions?",
+    "answer": "Yes! We love hearing from our listeners. Please email us at suggestions@podcast.com with your ideas.",
+    "category": "General",
+    "order": 3
+  },
+  {
+    "id": "faq-004",
+    "question": "Who are the hosts?",
+    "answer": "The podcast is hosted by Alex Johnson and Sarah Chen, both experts in their respective fields.",
+    "category": "About",
+    "order": 4
+  }
+]

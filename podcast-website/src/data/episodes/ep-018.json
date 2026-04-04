@@ -1,0 +1,20 @@
+{
+  "id": "ep-018",
+  "title": "Episode 18: Listener Stories",
+  "description": "Exploring fascinating topics with our expert guests. This episode covers important developments in the industry.",
+  "longDescription": "In this episode, we dive deep into important topics and explore various perspectives. Our hosts discuss the latest developments and share insights from industry experts. Whether you're interested in business, technology, or creative pursuits, this episode has something for you.",
+  "coverImage": "/images/episodes/ep-018.jpg",
+  "audioFile": "/audio/episodes/ep-018.mp3",
+  "duration": "01:00:49",
+  "publishDate": "2024-01-17",
+  "isFeatured": false,
+  "hosts": [
+    "host-001",
+    "host-002"
+  ],
+  "tags": [
+    "podcast",
+    "discussion",
+    "insights"
+  ]
+}

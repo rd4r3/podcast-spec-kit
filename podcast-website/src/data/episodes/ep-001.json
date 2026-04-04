@@ -1,0 +1,20 @@
+{
+  "id": "ep-001",
+  "title": "Episode 1: Industry Insights",
+  "description": "Exploring fascinating topics with our expert guests. This episode covers important developments in the industry.",
+  "longDescription": "In this episode, we dive deep into important topics and explore various perspectives. Our hosts discuss the latest developments and share insights from industry experts. Whether you're interested in business, technology, or creative pursuits, this episode has something for you.",
+  "coverImage": "/images/episodes/ep-001.jpg",
+  "audioFile": "/audio/episodes/ep-001.mp3",
+  "duration": "00:37:00",
+  "publishDate": "2023-12-31",
+  "isFeatured": true,
+  "hosts": [
+    "host-001",
+    "host-002"
+  ],
+  "tags": [
+    "podcast",
+    "discussion",
+    "insights"
+  ]
+}

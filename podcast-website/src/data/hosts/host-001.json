@@ -1,0 +1,11 @@
+{
+  "id": "host-001",
+  "name": "Alex Johnson",
+  "bio": "Alex is a seasoned podcast host with over 10 years of experience in audio production and storytelling.",
+  "photo": "/images/hosts/host-001.jpg",
+  "role": "Host",
+  "socialLinks": {
+    "twitter": "https://twitter.com",
+    "linkedin": "https://linkedin.com"
+  }
+}

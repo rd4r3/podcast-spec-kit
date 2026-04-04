@@ -1,0 +1,11 @@
+{
+  "id": "host-002",
+  "name": "Sarah Chen",
+  "bio": "Sarah brings expertise in technology and innovation to the podcast, helping break down complex topics.",
+  "photo": "/images/hosts/host-002.jpg",
+  "role": "Co-Host",
+  "socialLinks": {
+    "twitter": "https://twitter.com",
+    "linkedin": "https://linkedin.com"
+  }
+}

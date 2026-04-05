@@ -4,7 +4,7 @@ describe('Episodes List Page', () => {
   })
 
   it('should load the episodes list page', () => {
-    cy.title().should('include', 'podcast')
+    cy.contains('All Episodes').should('be.visible')
   })
 
   it('should display the page heading', () => {

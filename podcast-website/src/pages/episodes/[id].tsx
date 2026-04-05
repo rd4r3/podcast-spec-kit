@@ -3,12 +3,14 @@ import Link from 'next/link';
 import { PodcastEpisode } from '@/types';
 import { getAllEpisodes, getEpisodeById } from '@/utils/data-loader';
 import { formatDate } from '@/utils/date-utils';
+import AudioPlayer from '@/components/AudioPlayer';
 
 interface EpisodeDetailProps {
   episode: PodcastEpisode | null;
+  relatedEpisodes?: PodcastEpisode[];
 }
 
-export default function EpisodeDetailPage({ episode }: EpisodeDetailProps) {
+export default function EpisodeDetailPage({ episode, relatedEpisodes = [] }: EpisodeDetailProps) {
   if (!episode) {
     return <div>Episode not found</div>;
   }
@@ -27,14 +29,12 @@ export default function EpisodeDetailPage({ episode }: EpisodeDetailProps) {
           </p>
 
           {/* Audio Player */}
-          <div className="card mb-8">
-            <audio
-              controls
-              className="w-full"
+          <div className="mb-8">
+            <AudioPlayer
               src={episode.audioFile}
-            >
-              Your browser does not support the audio element.
-            </audio>
+              title={episode.title}
+              coverImage={episode.coverImage}
+            />
           </div>
 
           {/* Description */}
@@ -57,6 +57,30 @@ export default function EpisodeDetailPage({ episode }: EpisodeDetailProps) {
                   >
                     {tag}
                   </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Related Episodes */}
+          {relatedEpisodes.length > 0 && (
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold mb-4">Related Episodes</h2>
+              <div className="grid grid-cols-1 gap-4">
+                {relatedEpisodes.map((relatedEpisode) => (
+                  <Link
+                    key={relatedEpisode.id}
+                    href={`/episodes/${relatedEpisode.id}`}
+                    className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md transition-shadow"
+                  >
+                    <h3 className="font-bold text-lg mb-2">{relatedEpisode.title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      {formatDate(relatedEpisode.publishDate)} • {relatedEpisode.duration}
+                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2">
+                      {relatedEpisode.description}
+                    </p>
+                  </Link>
                 ))}
               </div>
             </div>

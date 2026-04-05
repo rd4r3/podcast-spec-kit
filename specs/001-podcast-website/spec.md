@@ -2,7 +2,7 @@
 
 **Feature Branch**: `001-podcast-website`
 **Created**: 2026-04-04
-**Status**: Draft
+**Status**: Completed
 **Input**: User description: "I am building a modern podcast website, I want it to look sleek, something that would stand out. Should have a landing page with one featured episode. There should be an episode page an about page and FAQ page. should have 20 episodes and the data is mocked. Dont need to pull anything from any real feed."
 
 ## User Scenarios & Testing

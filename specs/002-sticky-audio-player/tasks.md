@@ -35,11 +35,11 @@ total_tasks: 32
 **Duration**: 0.5-1 day  
 **Blocking**: No other phases can begin until this is complete
 
-- [ ] T001 Create AudioContext type definitions in `podcast-website/src/types/audio.ts`
-- [ ] T002 [P] Create project directory structure for audio player: `src/context/`, `src/components/StickyPlayer/`
-- [ ] T003 [P] Verify TypeScript strict mode is enabled in `podcast-website/tsconfig.json`
-- [ ] T004 [P] Verify ESLint and Prettier are configured for the project
-- [ ] T005 Create constants file for audio player configurations in `podcast-website/src/utils/audioConstants.ts`
+- [X] T001 Create AudioContext type definitions in `podcast-website/src/types/audio.ts`
+- [X] T002 [P] Create project directory structure for audio player: `src/context/`, `src/components/StickyPlayer/`
+- [X] T003 [P] Verify TypeScript strict mode is enabled in `podcast-website/tsconfig.json`
+- [X] T004 [P] Verify ESLint and Prettier are configured for the project
+- [X] T005 Create constants file for audio player configurations in `podcast-website/src/utils/audioConstants.ts`
 
 ---
 
@@ -49,12 +49,12 @@ total_tasks: 32
 **Duration**: 1-1.5 days  
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Create AudioContext with provider in `podcast-website/src/context/AudioContext.tsx` (complete context with all state actions)
-- [ ] T007 [P] Add AudioProvider wrapper to `podcast-website/src/pages/_app.tsx`
-- [ ] T008 [P] Add custom useAudio hook in `podcast-website/src/context/AudioContext.tsx` (or separate file)
-- [ ] T009 Add responsive bottom padding to main content wrapper in `podcast-website/src/components/Layout.tsx` to prevent sticky player obstruction
-- [ ] T010 Create utility function `formatTime()` for displaying duration in `podcast-website/src/utils/formatters.ts`
-- [ ] T011 [P] Create unit tests for AudioContext in `podcast-website/src/context/AudioContext.test.tsx` (test initial state, play, pause, seek, volume, collapse actions)
+- [X] T006 Create AudioContext with provider in `podcast-website/src/context/AudioContext.tsx` (complete context with all state actions)
+- [X] T007 [P] Add AudioProvider wrapper to `podcast-website/src/pages/_app.tsx`
+- [X] T008 [P] Add custom useAudio hook in `podcast-website/src/context/AudioContext.tsx` (or separate file)
+- [X] T009 Add responsive bottom padding to main content wrapper in `podcast-website/src/components/Layout.tsx` to prevent sticky player obstruction
+- [X] T010 Create utility function `formatTime()` for displaying duration in `podcast-website/src/utils/formatters.ts`
+- [X] T011 [P] Create unit tests for AudioContext in `podcast-website/src/context/AudioContext.test.tsx` (test initial state, play, pause, seek, volume, collapse actions)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel ✅
 
@@ -74,22 +74,22 @@ total_tasks: 32
 
 ### Tests for User Story 1 (Test-Driven Development)
 
-- [ ] T012 [P] [US1] Write integration test for state persistence across page navigation in `podcast-website/cypress/e2e/sticky-player-state-persistence.cy.ts`
-- [ ] T013 [P] [US1] Write integration test for playback continuation when navigating pages in `podcast-website/cypress/e2e/sticky-player-playback.cy.ts`
-- [ ] T014 [P] [US1] Write unit test for play/pause state in Context in `podcast-website/src/context/AudioContext.test.tsx` (additional tests beyond T011)
+- [X] T012 [P] [US1] Write integration test for state persistence across page navigation in `podcast-website/cypress/e2e/sticky-player-state-persistence.cy.ts`
+- [X] T013 [P] [US1] Write integration test for playback continuation when navigating pages in `podcast-website/cypress/e2e/sticky-player-playback.cy.ts`
+- [X] T014 [P] [US1] Write unit test for play/pause state in Context in `podcast-website/src/context/AudioContext.test.tsx` (additional tests beyond T011)
 
 ### Implementation for User Story 1
 
-- [ ] T015 [US1] Implement StickyPlayer component structure in `podcast-website/src/components/StickyPlayer.tsx` with expanded state UI (episode info, controls, progress bar)
-- [ ] T016 [P] [US1] Create StickyPlayer subcomponents: `src/components/StickyPlayer/PlayerControls.tsx` (play/pause button, UI)
-- [ ] T017 [P] [US1] Create StickyPlayer subcomponents: `src/components/StickyPlayer/EpisodeInfo.tsx` (title, cover, duration/current time display)
-- [ ] T018 [US1] Integrate StickyPlayer component into `podcast-website/src/components/Layout.tsx` (render at bottom with fixed positioning)
-- [ ] T019 [US1] Add hidden audio element to StickyPlayer for HTML5 audio playback in `podcast-website/src/components/StickyPlayer.tsx`
-- [ ] T020 [US1] Sync Context state with HTML audio element (play/pause, currentTime, volume effects) in `podcast-website/src/components/StickyPlayer.tsx` using useEffect
-- [ ] T021 [US1] Connect episode selection to Context (modify EpisodeCard component to dispatch setCurrentEpisode + play) in `podcast-website/src/components/EpisodeCard.tsx`
-- [ ] T022 [P] [US1] Add unit tests for StickyPlayer expanded view rendering in `podcast-website/src/components/StickyPlayer.test.tsx`
-- [ ] T023 [P] [US1] Add unit tests for play/pause button functionality in `podcast-website/src/components/StickyPlayer.test.tsx`
-- [ ] T024 [US1] Test manually: Play episode on homepage → navigate to /episodes → verify playback continues, player visible
+- [X] T015 [US1] Implement StickyPlayer component structure in `podcast-website/src/components/StickyPlayer.tsx` with expanded state UI (episode info, controls, progress bar)
+- [X] T016 [P] [US1] Create StickyPlayer subcomponents: `src/components/StickyPlayer/PlayerControls.tsx` (play/pause button, UI)
+- [X] T017 [P] [US1] Create StickyPlayer subcomponents: `src/components/StickyPlayer/EpisodeInfo.tsx` (title, cover, duration/current time display)
+- [X] T018 [US1] Integrate StickyPlayer component into `podcast-website/src/components/Layout.tsx` (render at bottom with fixed positioning)
+- [X] T019 [US1] Add hidden audio element to StickyPlayer for HTML5 audio playback in `podcast-website/src/components/StickyPlayer.tsx`
+- [X] T020 [US1] Sync Context state with HTML audio element (play/pause, currentTime, volume effects) in `podcast-website/src/components/StickyPlayer.tsx` using useEffect
+- [X] T021 [US1] Connect episode selection to Context (modify EpisodeCard component to dispatch setCurrentEpisode + play) in `podcast-website/src/components/EpisodeCard.tsx`
+- [X] T022 [P] [US1] Add unit tests for StickyPlayer expanded view rendering in `podcast-website/src/components/StickyPlayer.test.tsx`
+- [X] T023 [P] [US1] Add unit tests for play/pause button functionality in `podcast-website/src/components/StickyPlayer.test.tsx`
+- [X] T024 [US1] Test manually: Play episode on homepage → navigate to /episodes → verify playback continues, player visible
 
 **Checkpoint**: User Story 1 complete - core sticky player with playback persistence functional and independently testable ✅
 
@@ -109,17 +109,17 @@ total_tasks: 32
 
 ### Tests for User Story 2
 
-- [ ] T025 [P] [US2] Write unit test for progress bar seek functionality in `podcast-website/src/components/StickyPlayer.test.tsx`
-- [ ] T026 [P] [US2] Write unit test for volume control in `podcast-website/src/components/StickyPlayer.test.tsx`
-- [ ] T027 [US2] Write E2E test for seeking to position using progress bar in `podcast-website/cypress/e2e/sticky-player-controls.cy.ts`
-- [ ] T028 [US2] Write E2E test for volume adjustment in `podcast-website/cypress/e2e/sticky-player-controls.cy.ts`
-- [ ] T029 [US2] Write visual regression test: long FAQ page scrolled to bottom shows player above content in `podcast-website/cypress/e2e/sticky-player-layout.cy.ts`
+- [X] T025 [P] [US2] Write unit test for progress bar seek functionality in `podcast-website/src/components/StickyPlayer.test.tsx`
+- [X] T026 [P] [US2] Write unit test for volume control in `podcast-website/src/components/StickyPlayer.test.tsx`
+- [X] T027 [US2] Write E2E test for seeking to position using progress bar in `podcast-website/cypress/e2e/sticky-player-controls.cy.ts`
+- [X] T028 [US2] Write E2E test for volume adjustment in `podcast-website/cypress/e2e/sticky-player-controls.cy.ts`
+- [X] T029 [US2] Write visual regression test: long FAQ page scrolled to bottom shows player above content in `podcast-website/cypress/e2e/sticky-player-layout.cy.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T030 [US2] Implement progress bar component in `podcast-website/src/components/StickyPlayer/ProgressBar.tsx` (range input with seek on change)
-- [ ] T031 [US2] Implement volume control component in `podcast-website/src/components/StickyPlayer/VolumeControl.tsx` (slider, 0-1 range)
-- [ ] T032 [P] [US2] Add time display logic (current time / total duration) in `podcast-website/src/components/StickyPlayer.tsx` (use formatTime utility)
+- [X] T030 [US2] Implement progress bar component in `podcast-website/src/components/StickyPlayer/ProgressBar.tsx` (range input with seek on change)
+- [X] T031 [US2] Implement volume control component in `podcast-website/src/components/StickyPlayer/VolumeControl.tsx` (slider, 0-1 range)
+- [X] T032 [P] [US2] Add time display logic (current time / total duration) in `podcast-website/src/components/StickyPlayer.tsx` (use formatTime utility)
 - [ ] T033 [P] [US2] Connect progress bar to Context: seek action updates currentTime on input change in `podcast-website/src/components/StickyPlayer/ProgressBar.tsx`
 - [ ] T034 [P] [US2] Connect volume control to Context: setVolume action on slider change in `podcast-website/src/components/StickyPlayer/VolumeControl.tsx`
 - [ ] T035 [US2] Sync audio element with progress bar and volume changes in `podcast-website/src/components/StickyPlayer.tsx` using useEffect

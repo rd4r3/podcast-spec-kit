@@ -1,9 +1,6 @@
 ---
 description: Execute the implementation plan by processing and executing all tasks defined in tasks.md
-name: speckit-implement
 ---
-
-# speckit-implement instructions
 
 ## User Input
 
@@ -13,7 +10,7 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
-<!-- ## Pre-Execution Checks
+## Pre-Execution Checks
 
 **Check for extension hooks (before implementation)**:
 - Check if `.specify/extensions.yml` exists in the project root.
@@ -45,7 +42,7 @@ You **MUST** consider the user input before proceeding (if not empty).
     
     Wait for the result of the hook command before proceeding to the Outline.
     ```
-- If no hooks are registered or `.specify/extensions.yml` does not exist, skip silently -->
+- If no hooks are registered or `.specify/extensions.yml` does not exist, skip silently
 
 ## Outline
 
@@ -94,11 +91,11 @@ You **MUST** consider the user input before proceeding (if not empty).
    - **REQUIRED**: Create/verify ignore files based on actual project setup:
 
    **Detection & Creation Logic**:
-   <!-- - Check if the following command succeeds to determine if the repository is a git repo (create/verify .gitignore if so):
+   - Check if the following command succeeds to determine if the repository is a git repo (create/verify .gitignore if so):
 
      ```sh
      git rev-parse --git-dir 2>/dev/null
-     ``` -->
+     ```
 
    - Check if Dockerfile* exists or Docker in plan.md → create/verify .dockerignore
    - Check if .eslintrc* exists → create/verify .eslintignore
@@ -199,4 +196,3 @@ Note: This command assumes a complete task breakdown exists in tasks.md. If task
         EXECUTE_COMMAND: {command}
         ```
     - If no hooks are registered or `.specify/extensions.yml` does not exist, skip silently
-

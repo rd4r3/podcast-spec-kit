@@ -1,8 +1,7 @@
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
+import EpisodeCard from '@/components/EpisodeCard';
 import { PodcastEpisode } from '@/types';
 import { getAllEpisodes } from '@/utils/data-loader';
-import { formatDate } from '@/utils/date-utils';
 
 interface EpisodesProps {
   episodes: PodcastEpisode[];
@@ -14,25 +13,17 @@ export default function EpisodesPage({ episodes }: EpisodesProps) {
       <h1 className="text-4xl font-bold mb-8">All Episodes</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {episodes.map((episode) => (
-          <Link
+          <EpisodeCard
             key={episode.id}
-            href={`/episodes/${episode.id}`}
-            className="card hover:shadow-xl hover:scale-105 cursor-pointer"
-          >
-            <img
-              src={episode.coverImage}
-              alt={episode.title}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h3 className="text-xl font-bold mb-2">{episode.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-              {episode.description}
-            </p>
-            <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-              <span>{formatDate(episode.publishDate)}</span>
-              <span>{episode.duration}</span>
-            </div>
-          </Link>
+            episode={{
+              id: episode.id,
+              title: episode.title,
+              description: episode.description,
+              coverImage: episode.coverImage,
+              duration: episode.duration,
+              publishDate: episode.publishDate,
+            }}
+          />
         ))}
       </div>
     </div>

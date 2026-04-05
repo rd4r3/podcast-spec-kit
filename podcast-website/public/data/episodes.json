@@ -1,0 +1,142 @@
+[
+  {
+    "id": "ep-001",
+    "title": "Episode 1: Industry Insights",
+    "coverImage": "/images/episodes/ep-001.jpg",
+    "duration": "00:37:00",
+    "audioFile": "/audio/episodes/ep-001.mp3"
+  },
+  {
+    "id": "ep-002",
+    "title": "Episode 2: Deep Dive Analysis",
+    "coverImage": "/images/episodes/ep-002.jpg",
+    "duration": "00:57:56",
+    "audioFile": "/audio/episodes/ep-002.mp3"
+  },
+  {
+    "id": "ep-003",
+    "title": "Episode 3: Creative Process",
+    "coverImage": "/images/episodes/ep-003.jpg",
+    "duration": "00:20:11",
+    "audioFile": "/audio/episodes/ep-003.mp3"
+  },
+  {
+    "id": "ep-004",
+    "title": "Episode 4: Technical Deep Dive",
+    "coverImage": "/images/episodes/ep-004.jpg",
+    "duration": "00:43:51",
+    "audioFile": "/audio/episodes/ep-004.mp3"
+  },
+  {
+    "id": "ep-005",
+    "title": "Episode 5: Interview Special",
+    "coverImage": "/images/episodes/ep-005.jpg",
+    "duration": "00:09:13",
+    "audioFile": "/audio/episodes/ep-005.mp3"
+  },
+  {
+    "id": "ep-006",
+    "title": "Episode 6: Q&A Session",
+    "coverImage": "/images/episodes/ep-006.jpg",
+    "duration": "00:19:55",
+    "audioFile": "/audio/episodes/ep-006.mp3"
+  },
+  {
+    "id": "ep-007",
+    "title": "Episode 7: Behind the Scenes",
+    "coverImage": "/images/episodes/ep-007.jpg",
+    "duration": "00:32:04",
+    "audioFile": "/audio/episodes/ep-007.mp3"
+  },
+  {
+    "id": "ep-008",
+    "title": "Episode 8: Listener Stories",
+    "coverImage": "/images/episodes/ep-008.jpg",
+    "duration": "00:31:07",
+    "audioFile": "/audio/episodes/ep-008.mp3"
+  },
+  {
+    "id": "ep-009",
+    "title": "Episode 9: Special Edition",
+    "coverImage": "/images/episodes/ep-009.jpg",
+    "duration": "00:11:03",
+    "audioFile": "/audio/episodes/ep-009.mp3"
+  },
+  {
+    "id": "ep-010",
+    "title": "Episode 10: The Future of Podcasting",
+    "coverImage": "/images/episodes/ep-010.jpg",
+    "duration": "00:10:14",
+    "audioFile": "/audio/episodes/ep-010.mp3"
+  },
+  {
+    "id": "ep-011",
+    "title": "Episode 11: Industry Insights",
+    "coverImage": "/images/episodes/ep-011.jpg",
+    "duration": "01:19:08",
+    "audioFile": "/audio/episodes/ep-011.mp3"
+  },
+  {
+    "id": "ep-012",
+    "title": "Episode 12: Deep Dive Analysis",
+    "coverImage": "/images/episodes/ep-012.jpg",
+    "duration": "01:25:20",
+    "audioFile": "/audio/episodes/ep-012.mp3"
+  },
+  {
+    "id": "ep-013",
+    "title": "Episode 13: Creative Process",
+    "coverImage": "/images/episodes/ep-013.jpg",
+    "duration": "00:28:19",
+    "audioFile": "/audio/episodes/ep-013.mp3"
+  },
+  {
+    "id": "ep-014",
+    "title": "Episode 14: Technical Deep Dive",
+    "coverImage": "/images/episodes/ep-014.jpg",
+    "duration": "01:54:52",
+    "audioFile": "/audio/episodes/ep-014.mp3"
+  },
+  {
+    "id": "ep-015",
+    "title": "Episode 15: Interview Special",
+    "coverImage": "/images/episodes/ep-015.jpg",
+    "duration": "00:11:11",
+    "audioFile": "/audio/episodes/ep-015.mp3"
+  },
+  {
+    "id": "ep-016",
+    "title": "Episode 16: Q&A Session",
+    "coverImage": "/images/episodes/ep-016.jpg",
+    "duration": "01:39:23",
+    "audioFile": "/audio/episodes/ep-016.mp3"
+  },
+  {
+    "id": "ep-017",
+    "title": "Episode 17: Behind the Scenes",
+    "coverImage": "/images/episodes/ep-017.jpg",
+    "duration": "01:44:25",
+    "audioFile": "/audio/episodes/ep-017.mp3"
+  },
+  {
+    "id": "ep-018",
+    "title": "Episode 18: Listener Stories",
+    "coverImage": "/images/episodes/ep-018.jpg",
+    "duration": "01:00:49",
+    "audioFile": "/audio/episodes/ep-018.mp3"
+  },
+  {
+    "id": "ep-019",
+    "title": "Episode 19: Special Edition",
+    "coverImage": "/images/episodes/ep-019.jpg",
+    "duration": "00:57:09",
+    "audioFile": "/audio/episodes/ep-019.mp3"
+  },
+  {
+    "id": "ep-020",
+    "title": "Episode 20: The Future of Podcasting",
+    "coverImage": "/images/episodes/ep-020.jpg",
+    "duration": "00:35:15",
+    "audioFile": "/audio/episodes/ep-020.mp3"
+  }
+]

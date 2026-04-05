@@ -7,14 +7,21 @@ interface AudioPlayerState {
   isPlaying: boolean;
   currentTime: number;
   duration: number;
+  volume: number;
+  isCollapsed: boolean;
 }
 
 interface AudioContextType {
   state: AudioPlayerState;
   setCurrentEpisode: (episodeId: string) => void;
   setIsPlaying: (isPlaying: boolean) => void;
+  togglePlayPause: () => void;
   setCurrentTime: (time: number) => void;
   setDuration: (duration: number) => void;
+  setVolume: (volume: number) => void;
+  toggleCollapsed: () => void;
+  play: () => void;
+  pause: () => void;
 }
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
@@ -25,6 +32,8 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     isPlaying: false,
     currentTime: 0,
     duration: 0,
+    volume: 0.8,
+    isCollapsed: false,
   });
 
   const setCurrentEpisode = useCallback((episodeId: string) => {
@@ -43,12 +52,37 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     setState((prev) => ({ ...prev, duration }));
   }, []);
 
+  const setVolume = useCallback((volume: number) => {
+    setState((prev) => ({ ...prev, volume: Math.max(0, Math.min(1, volume)) }));
+  }, []);
+
+  const toggleCollapsed = useCallback(() => {
+    setState((prev) => ({ ...prev, isCollapsed: !prev.isCollapsed }));
+  }, []);
+
+  const togglePlayPause = useCallback(() => {
+    setState((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
+  }, []);
+
+  const play = useCallback(() => {
+    setState((prev) => ({ ...prev, isPlaying: true }));
+  }, []);
+
+  const pause = useCallback(() => {
+    setState((prev) => ({ ...prev, isPlaying: false }));
+  }, []);
+
   const value: AudioContextType = {
     state,
     setCurrentEpisode,
     setIsPlaying,
     setCurrentTime,
     setDuration,
+    setVolume,
+    toggleCollapsed,
+    togglePlayPause,
+    play,
+    pause,
   };
 
   return (

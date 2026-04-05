@@ -2,17 +2,27 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import StickyPlayer from './StickyPlayer/StickyPlayer';
 
 interface LayoutProps {
   children: React.ReactNode;
+}
+
+interface Episode {
+  id: string;
+  title: string;
+  coverImage: string;
+  duration: string;
+  audioFile: string;
 }
 
 export default function Layout({ children }: LayoutProps) {
   const [darkMode, setDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [currentPath, setCurrentPath] = useState('');
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
 
-  // Initialize dark mode from localStorage on mount
+  // Initialize dark mode and load episodes on mount
   useEffect(() => {
     setMounted(true);
     const isDark = localStorage.getItem('darkMode') === 'true';
@@ -23,6 +33,12 @@ export default function Layout({ children }: LayoutProps) {
     
     // Get current pathname
     setCurrentPath(window.location.pathname);
+
+    // Load episodes from static JSON file
+    fetch('/data/episodes.json')
+      .then(res => res.json())
+      .then(data => setEpisodes(data))
+      .catch(err => console.error('Failed to load episodes:', err));
   }, []);
 
   const toggleDarkMode = () => {
@@ -124,7 +140,7 @@ export default function Layout({ children }: LayoutProps) {
         {/* Main Content */}
         <main 
           id="main-content"
-          className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full focus:outline-none"
+          className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full focus:outline-none pb-[120px] md:pb-[100px] sm:pb-[60px]"
           role="main"
           tabIndex={-1}
         >
@@ -150,6 +166,9 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
         </footer>
+
+        {/* Sticky Audio Player */}
+        {mounted && episodes.length > 0 && <StickyPlayer episodes={episodes} />}
       </div>
     </div>
   );

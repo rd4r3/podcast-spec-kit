@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import EpisodesPage from '@/pages/episodes'
+import { AudioProvider } from '@/context/AudioContext'
 import { PodcastEpisode } from '@/types'
 
 const mockEpisodes: PodcastEpisode[] = Array.from({ length: 20 }, (_, i) => ({
@@ -17,52 +18,60 @@ const mockEpisodes: PodcastEpisode[] = Array.from({ length: 20 }, (_, i) => ({
   tags: ['podcast', 'discussion', 'insights'],
 }))
 
+const renderWithAudioProvider = (component: React.ReactElement) => {
+  return render(
+    <AudioProvider>
+      {component}
+    </AudioProvider>
+  )
+}
+
 describe('Episodes Page', () => {
   it('renders the episodes page without crashing', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     expect(screen.getByText('All Episodes')).toBeInTheDocument()
   })
 
   it('displays the page title', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     expect(screen.getByText('All Episodes')).toBeInTheDocument()
   })
 
   it('displays all 20 episodes', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     mockEpisodes.forEach((episode) => {
       expect(screen.getByText(episode.title)).toBeInTheDocument()
     })
   })
 
   it('renders episode cards with cover images', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     const images = screen.getAllByAltText(/Episode/)
     expect(images.length).toBe(20)
   })
 
   it('displays episode descriptions', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     const descriptions = screen.getAllByText(/Exploring fascinating topics/)
     expect(descriptions.length).toBeGreaterThan(0)
   })
 
   it('displays publish dates and duration for episodes', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     // Check that spans with time content exist (the duration)
     const spans = screen.getAllByText(/\d{2}:\d{2}/)
     expect(spans.length).toBeGreaterThan(0)
   })
 
   it('renders episode cards as clickable links', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     const firstEpisodeLink = screen.getAllByRole('link').find(link => link.getAttribute('href') === '/episodes/ep-001')
     expect(firstEpisodeLink).toBeInTheDocument()
     expect(firstEpisodeLink).toHaveAttribute('href', '/episodes/ep-001')
   })
 
   it('renders all episodes with correct navigation links', () => {
-    render(<EpisodesPage episodes={mockEpisodes} />)
+    renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     const allLinks = screen.getAllByRole('link')
     mockEpisodes.forEach((episode) => {
       const link = allLinks.find(l => l.getAttribute('href') === `/episodes/${episode.id}`)
@@ -72,19 +81,19 @@ describe('Episodes Page', () => {
   })
 
   it('uses responsive grid layout classes', () => {
-    const { container } = render(<EpisodesPage episodes={mockEpisodes} />)
+    const { container } = renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     const gridContainer = container.querySelector('.grid')
     expect(gridContainer).toHaveClass('grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-3')
   })
 
   it('applies card styling to episode cards', () => {
-    const { container } = render(<EpisodesPage episodes={mockEpisodes} />)
+    const { container } = renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     const cards = container.querySelectorAll('.card')
     expect(cards.length).toBe(20)
   })
 
   it('applies hover effects to cards', () => {
-    const { container } = render(<EpisodesPage episodes={mockEpisodes} />)
+    const { container } = renderWithAudioProvider(<EpisodesPage episodes={mockEpisodes} />)
     const cards = container.querySelectorAll('.card')
     cards.forEach((card) => {
       expect(card).toHaveClass('hover:shadow-xl', 'hover:scale-105')
@@ -92,7 +101,7 @@ describe('Episodes Page', () => {
   })
 
   it('handles empty episodes list gracefully', () => {
-    render(<EpisodesPage episodes={[]} />)
+    renderWithAudioProvider(<EpisodesPage episodes={[]} />)
     expect(screen.getByText('All Episodes')).toBeInTheDocument()
   })
 })

@@ -1,165 +1,167 @@
 <!--
 Sync Impact Report
-Version: 1.0.0
-2.0.0 → 1.0.0
-2.0.0
-Date: 2026-04-04
+Version: 2.0.0 → 3.0.0
+Date: 2026-04-05
+MAJOR VERSION BUMP: Complete project pivot from Vite + SQLite to Next.js podcast website
 Changes:
-Initial validation passed
--->
----
-version: 2.0.0
-ratification_date: 2026-04-04
-last_amended_date: 2026-04-04
----
-
-<!--
-Sync Impact Report
-Version: 1.0.0 → 2.0.0
-Date: 2026-04-04
-Changes:
-- Major update to constitution with enhanced focus on code quality, testing, and performance
-- Added detailed principles for Code Quality, Comprehensive Testing, and Performance Optimization
-- Expanded Documentation Standards and Security Best Practices
-- Added Technical Governance section with Architecture Standards, Quality Gates, and Compliance Requirements
-- Updated Development Process with Decision Making, Change Control, and Versioning Policy
-- Added Glossary section for key terms
-- Updated dependent templates (plan-template.md, spec-template.md, tasks-template.md) for consistency
+- Complete rewrite of all core principles aligned with Next.js + static export architecture
+- Removed backend/database principles (no longer applicable)
+- Added static site generation and JSON data architecture principles
+- Added podcast-specific design system and audio player UX principles
+- Updated technical governance for static export constraints
+- Updated development process for specification-driven workflow
+- Architecture Standards now reflect Next.js patterns and TypeScript-first approach
 Files requiring updates:
-✅ .specify/templates/plan-template.md - Updated Constitution Check section
-✅ .specify/templates/spec-template.md - Added testing and performance criteria references
-✅ .specify/templates/tasks-template.md - Enhanced polish phase with constitution principles
+⚠ .specify/templates/plan-template.md - Update Constitution Check for podcast project
+⚠ .specify/templates/spec-template.md - Update for static site + data-driven requirements
+⚠ .specify/templates/tasks-template.md - Update task categories for frontend-only development
+⚠ .specify/templates/commands/*.md - Review for Next.js-specific guidance
 -->
+---
+version: 3.0.0
+ratification_date: 2026-04-05
+last_amended_date: 2026-04-05
+---
 
-# Project Constitution for Vite + SQLite Application
+# Project Constitution for Podcast Website (Next.js + Static Export)
 
 ## 1. Preamble
 
-This constitution establishes the governing principles, technical standards, and decision-making framework for the Vite + SQLite Application. It serves as the authoritative source of truth for all architectural, quality, and process requirements.
+This constitution establishes the governing principles, technical standards, and decision-making framework for the Podcast Specification Kit—a modern podcast website built with Next.js, TypeScript, and Tailwind CSS. It serves as the authoritative source of truth for all architectural, quality, and process requirements.
 
-Version: 2.0.0
-Ratified: 2026-04-04
-Last Amended: 2026-04-04
+Version: 3.0.0
+Ratified: 2026-04-05
+Last Amended: 2026-04-05
 
 ## 2. Core Principles
 
-### Code Quality
-All code must adhere to strict quality standards to ensure maintainability, reliability, and professionalism. This includes:
+### Type Safety & Code Quality
+All code must be written in TypeScript with strict type checking and consistent style:
 
-- **Consistent Style**: Enforce consistent code style through automated tools (ESLint, Prettier)
-- **Meaningful Naming**: Use descriptive names for variables, functions, and components
-- **Documentation**: Comprehensive code comments, JSDoc for functions, and README files for modules
-- **No Duplication**: Avoid code duplication through proper abstraction and component reuse
-- **Code Reviews**: Mandatory peer reviews for all changes with at least one approval
+- **TypeScript-First**: All source files must use TypeScript (`.ts`, `.tsx`) with strict mode enabled
+- **No Unsafe Types**: Avoid `any` types; use explicit types or generics
+- **Consistent Style**: Enforce ESLint + Prettier for code formatting and style
+- **Meaningful Names**: Use descriptive PascalCase for components, camelCase for functions/utilities
+- **Single Responsibility**: Each component/function has one clear purpose
+- **Component Composition**: Prefer functional components with hooks; avoid class components
 
-**Rationale**: High-quality code reduces technical debt, improves maintainability, and ensures long-term project health.
+**Rationale**: Type safety catches errors at development time, improves IDE support, and ensures maintainability across team contributions.
 
-### Comprehensive Testing
-All features must have comprehensive test coverage to ensure reliability and prevent regressions:
+### Component Testing
+All components must have unit and integration tests to ensure reliability:
 
-- **Unit Tests**: Test individual functions and components in isolation
-- **Integration Tests**: Test interactions between components and modules
-- **End-to-End Tests**: Test complete user flows from start to finish
-- **Test Coverage**: Minimum 80% code coverage for all new features
-- **Test-Driven Development**: Write tests before implementation for critical components
-- **Continuous Testing**: Run tests on every commit through CI/CD pipeline
+- **Component Unit Tests**: Test components in isolation using React Testing Library
+- **Integration Tests**: Test component interactions and state management
+- **Test Coverage**: Minimum 80% coverage for critical components and utilities
+- **Test-Driven Development**: Write tests first for new UI features
+- **E2E Testing**: Cypress tests for critical user flows (episode browsing, audio player)
 
-**Rationale**: Robust testing ensures software reliability, catches bugs early, and enables safe refactoring.
+**Rationale**: Component testing ensures features work as intended and prevents regressions during refactoring.
 
-### Performance Optimization
-The application must be optimized for performance to provide a responsive user experience:
+### Design System Adherence
+The visual and interactive design must be consistent across all pages:
 
-- **Efficient Data Access**: Optimize database queries and minimize data transfers
-- **Bundle Optimization**: Minimize bundle size through code splitting and tree shaking
-- **Rendering Performance**: Use virtualization for large lists and optimize React component rendering
-- **Caching Strategies**: Implement appropriate caching at all levels (UI, API, database)
-- **Performance Budgets**: Set and enforce performance budgets for key metrics
-- **Regular Audits**: Conduct performance audits using Lighthouse and WebPageTest
+- **Tailwind Utility-First**: Use Tailwind CSS for all styling; no custom CSS except for global resets
+- **Color Palette**: Blue (#3B82F6) to Purple (#8B5CF6) gradient for primary; respect dark mode variants
+- **Responsive Design**: Mobile-first approach; test at 640px, 768px, 1024px, 1280px breakpoints
+- **Animation Consistency**: 300ms ease-in-out transitions for all interactive elements
+- **Component Patterns**: Cards, buttons, inputs follow established design patterns
+- **Dark Mode**: All components must support dark mode with appropriate contrast ratios
 
-**Rationale**: Performance directly impacts user satisfaction and business success.
+**Rationale**: A consistent design system improves user experience, reduces cognitive load, and enables rapid feature development.
 
-### Documentation Standards
-All components must be properly documented to ensure knowledge sharing and maintainability:
+### Static Site Generation Best Practices
+Leverage Next.js static export to ensure optimal performance and reliability:
 
-- **Code Comments**: Explain complex logic and non-obvious decisions
-- **README Files**: Provide overview, setup instructions, and usage examples for each module
-- **API Documentation**: Document all public interfaces and endpoints
-- **Architecture Decisions**: Record architectural decisions and their rationale
-- **Change Logs**: Maintain clear records of changes between versions
+- **Pre-generated Routes**: All pages must be pre-generated at build time (no dynamic SSR)
+- **getStaticPaths**: Dynamic routes use `getStaticPaths` with complete path enumeration
+- **JSON Data Architecture**: All data lives in `src/data/` as JSON files; no external APIs or databases
+- **Unoptimized Images**: Next.js Image optimization disabled; images must be optimized manually
+- **Trailing Slashes**: Enable `trailingSlash: true` for consistent URL structure
+- **Build Validation**: Build must succeed and generate all 20+ pages without errors
 
-**Rationale**: Good documentation reduces onboarding time, improves collaboration, and preserves institutional knowledge.
+**Rationale**: Static exports enable CDN distribution, reduce operational complexity, and guarantee consistent performance.
 
-### Security Best Practices
-The application must follow security best practices to protect user data and system integrity:
+### Audio Player State Management
+The podcast audio player must maintain state across page navigation:
 
-- **Input Validation**: Validate all user inputs on both client and server
-- **Secure Data Storage**: Encrypt sensitive data at rest and in transit
-- **Authentication**: Implement proper authentication and authorization
-- **Dependency Management**: Regularly update dependencies and audit for vulnerabilities
-- **Security Headers**: Use appropriate security headers and CSP policies
-- **Penetration Testing**: Conduct regular security testing and audits
+- **Context API**: Audio player state managed via React Context (current time, playing status, volume)
+- **Persistent State**: Player state survives navigation between pages
+- **Keyboard Controls**: Spacebar toggles play/pause; arrow keys adjust volume and seek
+- **Visual Feedback**: Progress bar, duration display, and playback status always visible
+- **Accessibility**: Audio player supports keyboard navigation and screen readers
 
-**Rationale**: Security is critical for protecting users and maintaining trust in the application.
+**Rationale**: Seamless audio playback across the site is central to the podcast experience.
 
 ## 3. Technical Governance
 
 ### Architecture Standards
-- **Modular Design**: Components should be loosely coupled and highly cohesive
-- **Separation of Concerns**: Clear separation between UI, business logic, and data access
-- **API-First Design**: Design APIs before implementation to ensure consistency
-- **Progressive Enhancement**: Build for baseline experience first, then enhance
-- **Accessibility**: Follow WCAG guidelines for accessibility
+- **Next.js Pages Router**: Use pages-based routing in `src/pages/`; follow Next.js file conventions
+- **TypeScript Strict Mode**: All tsconfig settings enforce strict type checking
+- **Component Organization**: Reusable components in `src/components/`, pages in `src/pages/`, utilities in `src/utils/`
+- **Data Structure**: Episode and host data follow schemas defined in `specs/001-podcast-website/data-model.md` (authoritative)
+- **Separation of Concerns**: UI components separate from business logic; utilities for common functions
+- **No Backend Logic**: Static site only; all logic executes at build time or in the browser
 
 ### Quality Gates
-1. All code must pass linting and formatting checks
-2. All tests must pass before merging
-3. Code coverage must meet minimum thresholds
-4. Performance budgets must not be exceeded
-5. Security scans must pass without critical vulnerabilities
-6. Documentation must be updated with code changes
+1. TypeScript compilation must succeed with no errors or warnings
+2. ESLint must pass without errors (warnings acceptable if justified)
+3. All tests must pass before build
+4. Build must generate all expected static pages without errors
+5. Code coverage must meet 80% for new components and utilities
+6. No unoptimized images in the output
+7. Accessibility (WCAG 2.1 AA) must be maintained
 
 ### Compliance Requirements
-- **Licensing**: All dependencies must use compatible open-source licenses
-- **Privacy**: Comply with relevant data privacy regulations (GDPR, CCPA, etc.)
-- **Accessibility**: Meet WCAG 2.1 AA standards
-- **Standards Compliance**: Follow relevant web standards and best practices
+- **Data Schema Compliance**: All episode/host JSON must validate against `data-model.md` schemas
+- **Design System Compliance**: All UI must follow Tailwind design system defined in `plan.md` Phase 2.5
+- **Content Standards**: Episode titles 5-100 characters, descriptions 20-300 characters
+- **Performance**: Lighthouse scores must be maintained (Core Web Vitals green)
+- **Accessibility**: WCAG 2.1 AA conformance for all pages and components
 
 ## 4. Development Process
 
-### Decision Making
-- Technical decisions should be made collaboratively with input from relevant stakeholders
-- Major architectural decisions should be documented as ADRs (Architecture Decision Records)
-- Performance vs. feature tradeoffs should be explicitly discussed and documented
+### Specification-Driven Development
+- All features must be designed in the specification documents before implementation
+- Specifications live in `specs/001-podcast-website/` (spec.md, plan.md, data-model.md, tasks.md)
+- Major decisions are documented as Architecture Decision Records (ADRs)
+- Design system implementation tracked in specification checklists
 
 ### Change Control
-- All changes must go through pull requests with code review
-- Breaking changes must be clearly documented and communicated
-- Deprecations must follow a clear timeline with migration guidance
+- All changes go through pull requests with code review
+- Changes that affect data structure must update `data-model.md`
+- Changes to pages/features must update specification documents
+- Breaking changes to data schema require MAJOR version bump
+- Feature additions require MINOR version bump
 
-### Versioning Policy
-- **MAJOR**: Backward incompatible changes or major new features
-- **MINOR**: New backward-compatible features or significant improvements
-- **PATCH**: Backward-compatible bug fixes, documentation updates, and minor improvements
+### Versioning Policy for Data & Specifications
+- **MAJOR**: Backward-incompatible data schema changes, breaking API changes
+- **MINOR**: New podcast features, new data fields, new pages added
+- **PATCH**: Bug fixes, content updates, documentation clarifications, design refinements
 
 ## 5. Amendments and Ratification
 
 ### Amendment Procedure
-1. Propose changes through a pull request with clear justification
-2. Discuss changes with the team and relevant stakeholders
-3. Incorporate feedback and make necessary adjustments
-4. Approve changes through code review with at least two approvers
-5. Update the constitution version according to semantic versioning
-6. Communicate changes to all team members
+1. Propose changes to constitution via pull request with clear justification
+2. Discuss changes with the team and rationale for each principle adjustment
+3. Incorporate feedback and update version according to semantic versioning
+4. Approve constitution changes with at least one reviewer
+5. Propagate changes across dependent templates (plan-template.md, spec-template.md, etc.)
+6. Communicate changes clearly in commit message
 
 ### Ratification Requirements
-- Major changes require consensus from the core team
-- Minor changes require approval from at least two team members
-- All changes must be documented in the change log
+- MAJOR changes (new project direction, removed principles) require explicit team consensus
+- MINOR changes (new principle, expanded guidance) require approval from one team member
+- PATCH changes (clarifications, wording) can be ratified by proposing author with self-review
+- All changes documented in constitution history via Sync Impact Report
 
 ## 6. Glossary
 
-- **ADR**: Architecture Decision Record - a document capturing important architectural decisions
-- **CSP**: Content Security Policy - a security layer that helps detect and mitigate certain types of attacks
-- **WCAG**: Web Content Accessibility Guidelines - standards for making web content more accessible
-- **TDD**: Test-Driven Development - a software development process where tests are written before implementation
-- **CI/CD**: Continuous Integration/Continuous Deployment - practices for frequently merging code changes and automating testing and deployment
+- **ADR**: Architecture Decision Record - documentation of important architectural choices
+- **Component**: A reusable React element (functional component with TypeScript props interface)
+- **Static Export**: Next.js output mode that pre-generates all pages at build time
+- **getStaticPaths**: Next.js function that enumerates all dynamic route paths for static generation
+- **Tailwind**: Utility-first CSS framework providing responsive, composable design tokens
+- **WCAG**: Web Content Accessibility Guidelines - standards for accessible web design
+- **Data Schema**: TypeScript interface defining structure and validation rules for episode/host data
+- **Context API**: React mechanism for managing global state (used for audio player)

@@ -67,5 +67,4 @@ lerna-debug.log*
 **/jest.config.js.tmp
 
 # Session & local development
-/.vibe/
 .copilot/session-state/

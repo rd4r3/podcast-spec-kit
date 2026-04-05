@@ -34,19 +34,19 @@ podcast-spec-kit/
 
 ## How to Use the Spec Kit
 
-The specification files in this project were created using **Copilot CLI** with prompts located in the `.vibe/prompts` directory. These prompts provide structured guidance for generating comprehensive specifications, implementation plans, and task breakdowns.
+The specification files in this project were created using **Copilot CLI** with agents located in the `.github/agents` directory. These agents provide structured capabilities for generating comprehensive specifications, implementation plans, and task breakdowns.
 
 ### Workflow Demonstration
 
 The development process typically follows a seven-step sequence:
 
 1. **Initialize**: Run `specify init` to set up the project structure (e.g., constitution.md, spec.md, plan.md).
-2. **Constitution**: Define coding rules using `/speckit.constitution.md`, such as "TypeScript everywhere" or "No ORMs."
-3. **Specify**: Describe the application using `/speckit.specify.md`, focusing on features rather than tech stack.
-4. **Clarify**: Resolve ambiguities with `/speckit.clarify.md` (e.g., adding security or performance requirements).
-5. **Plan**: Generate a technical architecture with `/speckit.plan.md` (e.g., Vite + vanilla JS, Node.js + Express).
-6. **Task breakdown**: Break down the plan into tasks with `/speckit.tasks.md`.
-7. **Implement**: Implement using `/speckit.implement.md`.
+2. **Constitution**: Define coding rules using `speckit.constitution` agent.
+3. **Specify**: Describe the application using `speckit.specify` agent, focusing on features rather than tech stack.
+4. **Clarify**: Resolve ambiguities with `speckit.clarify` agent (optional, e.g., adding security or performance requirements).
+5. **Plan**: Generate a technical architecture with `speckit.plan` agent.
+6. **Task breakdown**: Break down the plan into tasks with `speckit.tasks` agent.
+7. **Implement**: Implement using `speckit.implement` agent.
 
 ### 1. **Understanding the Specification** 📋
 

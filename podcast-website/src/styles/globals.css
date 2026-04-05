@@ -1,8 +1,8 @@
+@import './design-system.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './design-system.css';
 
 /* Global Styles */
 html {

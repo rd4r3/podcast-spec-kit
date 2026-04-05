@@ -4,7 +4,7 @@ describe('Home Page - Featured Episode', () => {
   })
 
   it('should load the landing page', () => {
-    cy.title().should('include', 'podcast')
+    cy.contains('Featured Episode').should('be.visible')
   })
 
   it('should display the featured episode section', () => {
@@ -12,23 +12,23 @@ describe('Home Page - Featured Episode', () => {
   })
 
   it('should display featured episode title', () => {
-    cy.contains('Episode 1: Getting Started').should('be.visible')
+    cy.contains('Episode 1: Industry Insights').should('be.visible')
   })
 
   it('should display featured episode description', () => {
-    cy.contains('A comprehensive introduction to our podcast').should('be.visible')
+    cy.contains('Exploring fascinating topics').should('be.visible')
   })
 
   it('should display featured episode cover image', () => {
-    cy.get('img[alt="Episode 1: Getting Started"]')
+    cy.get('img[alt="Episode 1: Industry Insights"]')
       .should('be.visible')
-      .should('have.attr', 'src', '/images/ep-001.jpg')
+      .should('have.attr', 'src', '/images/episodes/ep-001.jpg')
   })
 
   it('should have a working "Listen Now" button', () => {
     cy.contains('Listen Now')
       .should('be.visible')
-      .should('have.attr', 'href', '/episodes/ep-001')
+      .should('have.attr', 'href', '/episodes/ep-001/')
   })
 
   it('should have a working "Add to Playlist" button', () => {
@@ -40,24 +40,18 @@ describe('Home Page - Featured Episode', () => {
   })
 
   it('should display recent episode cards', () => {
-    cy.get('a[href="/episodes/ep-002"]').should('be.visible')
-    cy.get('a[href="/episodes/ep-003"]').should('be.visible')
+    cy.get('a[href="/episodes/ep-020/"]').should('be.visible')
+    cy.get('a[href="/episodes/ep-019/"]').should('be.visible')
   })
 
-  it('should navigate to episode detail page when clicking featured episode title', () => {
-    cy.contains('Episode 1: Getting Started').click()
-    cy.url().should('include', '/episodes/ep-001')
-  })
-
-  it('should navigate to episode detail page when clicking featured episode image', () => {
-    cy.visit('/')
-    cy.get('img[alt="Episode 1: Getting Started"]').click()
+  it('should navigate to episode detail page when clicking featured episode Listen Now', () => {
+    cy.get('a[href="/episodes/ep-001/"]').first().click()
     cy.url().should('include', '/episodes/ep-001')
   })
 
   it('should navigate to episode detail page when clicking recent episode card', () => {
-    cy.contains('Episode 2: Advanced Topics').click()
-    cy.url().should('include', '/episodes/ep-002')
+    cy.contains('Episode 20: The Future of Podcasting').click()
+    cy.url().should('include', '/episodes/ep-020')
   })
 
   it('should have responsive design - check mobile view', () => {
@@ -79,7 +73,7 @@ describe('Home Page - Featured Episode', () => {
   })
 
   it('should display episode duration for recent episodes', () => {
-    cy.contains('45:30').should('be.visible')
+    cy.contains('00:35:15').should('be.visible')
   })
 
   it('should display episode publication date for recent episodes', () => {

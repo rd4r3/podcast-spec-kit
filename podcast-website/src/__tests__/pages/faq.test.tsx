@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
 import FAQPage from '@/pages/faq'
 import { FAQItem } from '@/types'
@@ -9,18 +8,21 @@ const mockFAQs: FAQItem[] = [
     question: 'How often do you release new episodes?',
     answer: 'We release new episodes every week on Mondays.',
     category: 'General',
+    order: 0
   },
   {
     id: 'faq-002',
     question: 'Where can I listen to the podcast?',
     answer: 'You can listen on all major podcast platforms.',
     category: 'Listening',
+    order: 0
   },
   {
     id: 'faq-003',
     question: 'How can I contact the hosts?',
     answer: 'You can reach us through our social media pages.',
     category: 'Contact',
+    order: 0
   },
 ]
 

@@ -1,7 +1,4 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { GetStaticProps } from 'next';
+import { render, screen } from '@testing-library/react';
 
 // Mock the data loader
 jest.mock('@/utils/data-loader', () => ({

@@ -38,7 +38,7 @@ The specification files in this project were created using **Copilot CLI** with 
 
 ### Workflow Demonstration
 
-The development process typically follows a six-step sequence:
+The development process typically follows a seven-step sequence:
 
 1. **Initialize**: Run `specify init` to set up the project structure (e.g., constitution.md, spec.md, plan.md).
 2. **Constitution**: Define coding rules using `/speckit.constitution.md`, such as "TypeScript everywhere" or "No ORMs."
@@ -144,4 +144,4 @@ When adding features or making changes:
 
 ---
 
-**Last Updated**: 2026-04-04
+**Last Updated**: 2026-04-05

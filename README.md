@@ -1,6 +1,6 @@
 # Podcast Spec Kit
 
-A comprehensive specification and implementation guide for building a modern podcast website using Next.js, TypeScript, and Tailwind CSS.
+A fully production-ready **spec-driven development project** that demonstrates the implementation of a podcast application using the **[Spec Kit framework](https://github.com/github/spec-kit)**. The **Spec Kit methodology** enables authoritative specifications, embedded mock data, static site export, and comprehensive testing for robust, maintainable output.
 
 ## Project Structure
 
@@ -33,6 +33,20 @@ podcast-spec-kit/
 ```
 
 ## How to Use the Spec Kit
+
+The specification files in this project were created using **Copilot CLI** with prompts located in the `.vibe/prompts` directory. These prompts provide structured guidance for generating comprehensive specifications, implementation plans, and task breakdowns.
+
+### Workflow Demonstration
+
+The development process typically follows a six-step sequence:
+
+1. **Initialize**: Run `specify init` to set up the project structure (e.g., constitution.md, spec.md, plan.md).
+2. **Constitution**: Define coding rules using `/speckit.constitution.md`, such as "TypeScript everywhere" or "No ORMs."
+3. **Specify**: Describe the application using `/speckit.specify.md`, focusing on features rather than tech stack.
+4. **Clarify**: Resolve ambiguities with `/speckit.clarify.md` (e.g., adding security or performance requirements).
+5. **Plan**: Generate a technical architecture with `/speckit.plan.md` (e.g., Vite + vanilla JS, Node.js + Express).
+6. **Task breakdown**: Break down the plan into tasks with `/speckit.tasks.md`.
+7. **Implement**: Implement using `/speckit.implement.md`.
 
 ### 1. **Understanding the Specification** 📋
 
@@ -110,15 +124,6 @@ npm run build
 - **Implementation Phases**: `specs/001-podcast-website/plan.md`
 - **Design System Details**: See Phase 2.5 in `specs/001-podcast-website/plan.md`
 - **Testing Guide**: `podcast-website/TESTING_GUIDE.md`
-
-## Development Workflow
-
-1. **Read** the relevant specification section
-2. **Check dependencies** in `tasks.md` to ensure prerequisites are complete
-3. **Implement** following the design system and data schemas
-4. **Test** with unit tests (Jest) and E2E tests (Cypress)
-5. **Verify** against acceptance criteria in the spec
-6. **Update** `IMPLEMENTATION_STATUS.md` when complete
 
 ## Notes
 

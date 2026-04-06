@@ -25,7 +25,7 @@ export default function CollapsedView({ episodeData }: CollapsedViewProps) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto w-full px-4 py-3 flex items-center gap-3">
+    <div className="max-w-7xl mx-auto w-full px-4 py-1 flex items-center gap-3">
       {/* Expand button */}
       <button
         onClick={handleExpand}

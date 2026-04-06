@@ -138,9 +138,9 @@ export default function Layout({ children }: LayoutProps) {
         </header>
 
         {/* Main Content */}
-        <main 
+        <main
           id="main-content"
-          className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full focus:outline-none pb-[120px] md:pb-[100px] sm:pb-[60px]"
+          className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full focus:outline-none pb-[64px]"
           role="main"
           tabIndex={-1}
         >

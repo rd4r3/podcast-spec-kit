@@ -22,7 +22,7 @@ describe('Home Page - Featured Episode', () => {
   it('should display featured episode cover image', () => {
     cy.get('img[alt="Episode 1: Industry Insights"]')
       .should('be.visible')
-      .should('have.attr', 'src', '/images/episodes/ep-001.jpg')
+      .should('have.attr', 'src', '/images/episodes/ep.jpg')
   })
 
   it('should have a working "Show Notes" button', () => {

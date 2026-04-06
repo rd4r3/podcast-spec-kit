@@ -120,10 +120,10 @@ total_tasks: 32
 - [X] T030 [US2] Implement progress bar component in `podcast-website/src/components/StickyPlayer/ProgressBar.tsx` (range input with seek on change)
 - [X] T031 [US2] Implement volume control component in `podcast-website/src/components/StickyPlayer/VolumeControl.tsx` (slider, 0-1 range)
 - [X] T032 [P] [US2] Add time display logic (current time / total duration) in `podcast-website/src/components/StickyPlayer.tsx` (use formatTime utility)
-- [ ] T033 [P] [US2] Connect progress bar to Context: seek action updates currentTime on input change in `podcast-website/src/components/StickyPlayer/ProgressBar.tsx`
-- [ ] T034 [P] [US2] Connect volume control to Context: setVolume action on slider change in `podcast-website/src/components/StickyPlayer/VolumeControl.tsx`
-- [ ] T035 [US2] Sync audio element with progress bar and volume changes in `podcast-website/src/components/StickyPlayer.tsx` using useEffect
-- [ ] T036 [US2] Test responsive padding: Verify content scrolls above player on all breakpoints (640px, 768px, 1024px, 1280px)
+- [X] T033 [P] [US2] Connect progress bar to Context: seek action updates currentTime on input change in `podcast-website/src/components/StickyPlayer/ProgressBar.tsx`
+- [X] T034 [P] [US2] Connect volume control to Context: setVolume action on slider change in `podcast-website/src/components/StickyPlayer/VolumeControl.tsx`
+- [X] T035 [US2] Sync audio element with progress bar and volume changes in `podcast-website/src/components/StickyPlayer.tsx` using useEffect
+- [X] T036 [US2] Test responsive padding: Verify content scrolls above player on all breakpoints (640px, 768px, 1024px, 1280px)
 - [ ] T037 [P] [US2] Add visual tests: Player doesn't obstruct critical page elements on homepage, episodes list, episode detail, about, FAQ pages
 - [ ] T038 [US2] Verify dark mode styling for all controls (progress bar, volume slider, time display) in `podcast-website/src/components/StickyPlayer.tsx`
 
@@ -151,16 +151,16 @@ total_tasks: 32
 
 ### Implementation for User Story 3
 
-- [ ] T044 [US3] Create collapsed player UI layout in `podcast-website/src/components/StickyPlayer/CollapsedView.tsx` (play button, title mini, time, expand toggle)
-- [ ] T045 [US3] Create expand/collapse toggle button in `podcast-website/src/components/StickyPlayer.tsx` with 300ms transition animation
-- [ ] T046 [US3] Implement conditional rendering logic in StickyPlayer: show expanded or collapsed based on Context.state.isCollapsed in `podcast-website/src/components/StickyPlayer.tsx`
-- [ ] T047 [P] [US3] Add Tailwind transition classes for smooth 300ms animation on container height/opacity changes in `podcast-website/src/components/StickyPlayer.tsx`
-- [ ] T048 [US3] Implement responsive defaults: collapsed by default on mobile (<768px), expanded on desktop (≥1024px) in `podcast-website/src/components/StickyPlayer.tsx`
+- [X] T044 [US3] Create collapsed player UI layout in `podcast-website/src/components/StickyPlayer/CollapsedView.tsx` (play button, title mini, time, expand toggle)
+- [X] T045 [US3] Create expand/collapse toggle button in `podcast-website/src/components/StickyPlayer.tsx` with 300ms transition animation
+- [X] T046 [US3] Implement conditional rendering logic in StickyPlayer: show expanded or collapsed based on Context.state.isCollapsed in `podcast-website/src/components/StickyPlayer.tsx`
+- [X] T047 [P] [US3] Add Tailwind transition classes for smooth 300ms animation on container height/opacity changes in `podcast-website/src/components/StickyPlayer.tsx`
+- [X] T048 [US3] Implement responsive defaults: collapsed by default on mobile (<768px), expanded on desktop (≥1024px) in `podcast-website/src/components/StickyPlayer.tsx`
 - [ ] T049 [P] [US3] Add unit tests: Verify play/pause works in collapsed state in `podcast-website/src/components/StickyPlayer.test.tsx`
 - [ ] T050 [P] [US3] Add unit tests: Verify expanded state shows all controls, collapsed state shows minimal controls in `podcast-website/src/components/StickyPlayer.test.tsx`
-- [ ] T051 [US3] Test collapsed state height: Verify ≤5% viewport height (≈48px on desktop) vs expanded ≤12% (≈120px on desktop)
+- [X] T051 [US3] Test collapsed state height: Verify ≤5% viewport height (≈48px on desktop) vs expanded ≤12% (≈120px on desktop)
 - [ ] T052 [US3] Test dark mode variants for collapsed view styling
-- [ ] T053 [US3] Test animation smoothness: Toggle collapse/expand multiple times, verify 300ms transition
+- [X] T053 [US3] Test animation smoothness: Toggle collapse/expand multiple times, verify 300ms transition
 
 **Checkpoint**: User Stories 1, 2, AND 3 complete - sticky player with full functionality and responsive collapse/expand ✅
 
@@ -212,9 +212,9 @@ total_tasks: 32
 
 ### Implementation for Keyboard Accessibility
 
-- [ ] T068 Add global keyboard event listener for spacebar in `podcast-website/src/components/StickyPlayer.tsx` (call togglePlayPause on spacebar, prevent default)
-- [ ] T069 [P] Add ARIA label to spacebar shortcut button: "Play/pause audio (spacebar)" in `podcast-website/src/components/StickyPlayer.tsx`
-- [ ] T070 [P] Test: Verify spacebar works from any page (doesn't conflict with textarea focus)
+- [X] T068 Add global keyboard event listener for spacebar in `podcast-website/src/components/StickyPlayer.tsx` (call togglePlayPause on spacebar, prevent default)
+- [X] T069 [P] Add ARIA label to spacebar shortcut button: "Play/pause audio (spacebar)" in `podcast-website/src/components/StickyPlayer.tsx`
+- [X] T070 [P] Test: Verify spacebar works from any page (doesn't conflict with textarea focus)
 - [ ] T071 Test: Verify spacebar works when sticky player is not in focus
 
 **Checkpoint**: Keyboard accessibility for v1 complete ✅

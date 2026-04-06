@@ -8,7 +8,7 @@ interface PlayerControlsProps {
 }
 
 export default function PlayerControls({ audioRef }: PlayerControlsProps) {
-  const { state, setIsPlaying, toggleCollapsed } = useAudio();
+  const { state, setIsPlaying } = useAudio();
 
   const handlePlayPause = () => {
     if (audioRef.current) {
@@ -79,18 +79,6 @@ export default function PlayerControls({ audioRef }: PlayerControlsProps) {
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M18 12c0-3.31-2.69-6-6-6s-6 2.69-6 6 2.69 6 6 6 6-2.69 6-6zm-1.53 0H11v5.5l3.5-3.5-3.5-3.5V14H5.53v-2z" />
-        </svg>
-      </button>
-
-      {/* Collapse button */}
-      <button
-        onClick={toggleCollapsed}
-        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-dark-bg-tertiary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 ml-auto"
-        aria-label="Collapse player"
-        title="Collapse"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </button>
     </div>
